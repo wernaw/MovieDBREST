@@ -26,8 +26,8 @@ def fetch_one(table: str, item_id: int) -> tuple:
 def fetch_all(table: str) -> List[Dict[str, Any]]:
     with get_db_cursor() as (db, cursor):
         cursor.execute(f"SELECT * FROM {table}")
-        rows = cursor.fetchall()
-    return rows
+        results = cursor.fetchall()
+    return results
 
 
 def insert_item(table: str, fields: List[str], values: List[Any]) -> int:

@@ -184,6 +184,21 @@ curl -X DELETE http://127.0.0.1:8000/actors/5
 ```bash
 curl http://127.0.0.1:8000/movies/4/actors
 ```
+<br>
+
+## ORM Version
+The orm folder contains the same movies and actors functionality but implemented using Peewee ORM instead of raw SQL queries.
+- Models for Movie and Actor are defined in orm/models.py.
+- Many-to-many relationships between movies and actors are handled via ManyToManyField.
+- CRUD operations are performed using Peewee methods.
+
+Example structure inside orm/:
+```
+orm/
+├─ models.py       # Peewee ORM models
+├─ db_utils.py     # CRUD helpers using ORM
+└─ movies_extended_orm.db  # SQLite database for ORM
+```
 
 ## Notes
 - SQLite database file: movies-extended.db
