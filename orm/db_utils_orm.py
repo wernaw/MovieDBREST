@@ -4,7 +4,7 @@ from typing import Any, Dict, List, Type
 from peewee import Model, DoesNotExist
 
 
-def fetch_one(model: Type[Model], item_id: int) -> Model:
+def fetch_one(model: Type[Model], item_id: int) -> Model | None:
     try:
         return model.get_by_id(item_id)
     except DoesNotExist:
