@@ -32,6 +32,5 @@ class Movie(BaseModel):
 
 ActorMovie = Movie.actors.get_through_model()
 
-db.connect()
-db.create_tables([Actor, Movie, ActorMovie])
-db.close()
+with db:
+    db.create_tables([Actor, Movie, ActorMovie])
